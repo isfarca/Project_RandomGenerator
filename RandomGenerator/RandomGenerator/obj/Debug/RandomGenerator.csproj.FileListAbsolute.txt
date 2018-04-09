@@ -1,0 +1,10 @@
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\bin\Debug\RandomGenerator.exe.config
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\bin\Debug\RandomGenerator.exe
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\bin\Debug\RandomGenerator.pdb
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.csprojResolveAssemblyReference.cache
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.FormMain.resources
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.Properties.Resources.resources
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.csproj.GenerateResource.Cache
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.csproj.CoreCompileInputs.cache
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.exe
+d:\Users\BM\Documents\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.pdb
