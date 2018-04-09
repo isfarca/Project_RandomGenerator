@@ -88,6 +88,7 @@
             this.ButtonResult.TabIndex = 4;
             this.ButtonResult.Text = "Result";
             this.ButtonResult.UseVisualStyleBackColor = true;
+            this.ButtonResult.Click += new System.EventHandler(this.ButtonResult_Click);
             // 
             // FormMain
             // 
