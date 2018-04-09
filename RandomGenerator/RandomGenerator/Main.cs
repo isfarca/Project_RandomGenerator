@@ -21,9 +21,15 @@ namespace RandomGenerator
         private void ButtonResult_Click(object sender, EventArgs e)
         {
             //for the number of different diceTypes
-            int diceTypeCounter = 0;
+            //HIER WIRD NOCH DIE VARIABLE VON FETHI BENOETIGT (statt 1)
+            int diceTypeCounter = 1;
             //for the number of dices of one specific type
-            int dicesOfTypeXCounter = 0;
+            TextBox diceAmountBox = new TextBox();
+            //for the type of the dice
+            ComboBox diceTypeBox = new ComboBox();
+            //for the output
+            ListBox resultBox = new ListBox();
+            Random random = new Random();
 
             //iterate through the types
             for (int i = 0; i > diceTypeCounter; i++)
@@ -31,23 +37,24 @@ namespace RandomGenerator
                 //find instances of the boxes and save them as variables
                 if (this.Controls.ContainsKey("ComboBoxDiceSides" + i.ToString()))
                 {
-                    ComboBox diceTypeBox = this.Controls["ComboBoxDiceSides" + i.ToString()] as ComboBox;
+                    diceTypeBox = this.Controls["ComboBoxDiceSides" + i.ToString()] as ComboBox;
                 }
                 if (this.Controls.ContainsKey("TextBoxDiceAmount" + i.ToString()))
                 {
-                    TextBox diceAmountBox = this.Controls["TextBoxDiceAmount" + i.ToString()] as TextBox;
+                    diceAmountBox = this.Controls["TextBoxDiceAmount" + i.ToString()] as TextBox;
                 }
                 if (this.Controls.ContainsKey("ListboxResultOutput" + i.ToString()))
                 {
-                    ListBox ResultBox = this.Controls["ListboxResultOutput" + i.ToString()] as ListBox;
+                    resultBox = this.Controls["ListboxResultOutput" + i.ToString()] as ListBox;
                 }
 
-                //combo-box[i].wert auslesen
-                //text-box[i].wert auslesen
-                //listbox[i] aufrufen und in Schleife mit der Länge von text-box[i].wert einen Wert zwischen 1 und combo-box[i].wert eintragen
+                //fill result box with random values, depending on diceType and diceAmount
+                for (int j = 1; j < Convert.ToInt32(diceAmountBox.Text); j++)
+                {
+                    resultBox.Items[0] = random.Next(1, (Convert.ToInt32(diceTypeBox.Text) + 1));
+                }
             }
-
-            ListboxResultOutput.Items[0] = 
+ 
         }
     }
 }
