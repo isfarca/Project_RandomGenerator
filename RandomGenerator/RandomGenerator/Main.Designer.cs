@@ -78,6 +78,7 @@
             this.ButtonAddDiceType.TabIndex = 3;
             this.ButtonAddDiceType.Text = "Add dice type";
             this.ButtonAddDiceType.UseVisualStyleBackColor = true;
+            this.ButtonAddDiceType.Click += new System.EventHandler(this.ButtonAddDiceType_Click);
             // 
             // ButtonResult
             // 
