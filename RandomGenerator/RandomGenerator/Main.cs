@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace RandomGenerator
     public partial class FormMain : Form
     {
         // Value types
-        private int addDiceTypeCount = 0;
+        private int addDiceTypeCount = 1;
         private int multiplicatorLocationY = 4;
         private int offset = 3;
         private ComboBox comboBox;
@@ -23,6 +24,11 @@ namespace RandomGenerator
         public FormMain()
         {
             InitializeComponent();
+
+            // Add number zero for the current widgets.
+            ComboBoxDiceSides.Name += 0;
+            TextboxDiceAmount.Name += 0;
+            ListboxResultOutput.Name += 0;
         }
 
         private void ButtonAddDiceType_Click(object sender, EventArgs e)
@@ -73,7 +79,7 @@ namespace RandomGenerator
 
         private void ButtonRemoveDiceType_Click(object sender, EventArgs e)
         {
-            // Declare variables
+            // Reset count of widgets in the current window.
             int comboboxes = 0;
             int textboxes = 0;
             int listboxes = 0;
