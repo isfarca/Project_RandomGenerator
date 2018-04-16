@@ -80,10 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\mystic_background_by_lirdrak-d712xh4.png" />
+    <None Include="Images\mystic_background_by_lirdrak-d712xh4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8357a3f1824f652.jpg" />
+    <None Include="Images\8357a3f1824f652.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
