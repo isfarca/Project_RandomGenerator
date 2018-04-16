@@ -114,11 +114,10 @@
         private System.Windows.Forms.Button ButtonAddDiceType;
         private System.Windows.Forms.Button ButtonResult;
         private System.Windows.Forms.AccessibleEvents Animation;
+        
+
     }
 
-    private void Animation();
-    {
-        
-    }
+
 }
 
