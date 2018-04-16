@@ -28,46 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ComboBoxDiceSides = new System.Windows.Forms.ComboBox();
-            this.TextboxDiceAmount = new System.Windows.Forms.TextBox();
-            this.ListboxResultOutput = new System.Windows.Forms.ListBox();
+            this.ComboBoxDiceSides0 = new System.Windows.Forms.ComboBox();
+            this.TextboxDiceAmount0 = new System.Windows.Forms.TextBox();
+            this.ListboxResultOutput0 = new System.Windows.Forms.ListBox();
             this.ButtonAddDiceType = new System.Windows.Forms.Button();
             this.ButtonResult = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // ComboBoxDiceSides
+            // ComboBoxDiceSides0
             // 
-            this.ComboBoxDiceSides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxDiceSides.FormattingEnabled = true;
-            this.ComboBoxDiceSides.Items.AddRange(new object[] {
+            this.ComboBoxDiceSides0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxDiceSides0.FormattingEnabled = true;
+            this.ComboBoxDiceSides0.Items.AddRange(new object[] {
             "4",
             "6",
             "12",
             "20"});
-            this.ComboBoxDiceSides.Location = new System.Drawing.Point(12, 12);
-            this.ComboBoxDiceSides.Name = "ComboBoxDiceSides";
-            this.ComboBoxDiceSides.Size = new System.Drawing.Size(121, 28);
-            this.ComboBoxDiceSides.TabIndex = 0;
-            this.ComboBoxDiceSides.Text = "Dice Side";
+            this.ComboBoxDiceSides0.Location = new System.Drawing.Point(12, 12);
+            this.ComboBoxDiceSides0.Name = "ComboBoxDiceSides0";
+            this.ComboBoxDiceSides0.Size = new System.Drawing.Size(121, 28);
+            this.ComboBoxDiceSides0.TabIndex = 0;
+            this.ComboBoxDiceSides0.Text = "Dice Side";
             // 
-            // TextboxDiceAmount
+            // TextboxDiceAmount0
             // 
-            this.TextboxDiceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextboxDiceAmount.Location = new System.Drawing.Point(139, 12);
-            this.TextboxDiceAmount.Name = "TextboxDiceAmount";
-            this.TextboxDiceAmount.Size = new System.Drawing.Size(117, 26);
-            this.TextboxDiceAmount.TabIndex = 1;
+            this.TextboxDiceAmount0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxDiceAmount0.Location = new System.Drawing.Point(139, 12);
+            this.TextboxDiceAmount0.Name = "TextboxDiceAmount0";
+            this.TextboxDiceAmount0.Size = new System.Drawing.Size(117, 26);
+            this.TextboxDiceAmount0.TabIndex = 1;
             // 
-            // ListboxResultOutput
+            // ListboxResultOutput0
             // 
-            this.ListboxResultOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListboxResultOutput.FormattingEnabled = true;
-            this.ListboxResultOutput.HorizontalScrollbar = true;
-            this.ListboxResultOutput.ItemHeight = 20;
-            this.ListboxResultOutput.Location = new System.Drawing.Point(262, 12);
-            this.ListboxResultOutput.Name = "ListboxResultOutput";
-            this.ListboxResultOutput.Size = new System.Drawing.Size(416, 24);
-            this.ListboxResultOutput.TabIndex = 2;
+            this.ListboxResultOutput0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListboxResultOutput0.FormattingEnabled = true;
+            this.ListboxResultOutput0.HorizontalScrollbar = true;
+            this.ListboxResultOutput0.ItemHeight = 20;
+            this.ListboxResultOutput0.Location = new System.Drawing.Point(262, 12);
+            this.ListboxResultOutput0.Name = "ListboxResultOutput0";
+            this.ListboxResultOutput0.Size = new System.Drawing.Size(416, 24);
+            this.ListboxResultOutput0.TabIndex = 2;
             // 
             // ButtonAddDiceType
             // 
@@ -97,9 +97,9 @@
             this.ClientSize = new System.Drawing.Size(690, 501);
             this.Controls.Add(this.ButtonResult);
             this.Controls.Add(this.ButtonAddDiceType);
-            this.Controls.Add(this.ListboxResultOutput);
-            this.Controls.Add(this.TextboxDiceAmount);
-            this.Controls.Add(this.ComboBoxDiceSides);
+            this.Controls.Add(this.ListboxResultOutput0);
+            this.Controls.Add(this.TextboxDiceAmount0);
+            this.Controls.Add(this.ComboBoxDiceSides0);
             this.Name = "FormMain";
             this.Text = "Random Generator";
             this.ResumeLayout(false);
@@ -109,9 +109,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox ComboBoxDiceSides;
-        private System.Windows.Forms.TextBox TextboxDiceAmount;
-        private System.Windows.Forms.ListBox ListboxResultOutput;
+        private System.Windows.Forms.ComboBox ComboBoxDiceSides0;
+        private System.Windows.Forms.TextBox TextboxDiceAmount0;
+        private System.Windows.Forms.ListBox ListboxResultOutput0;
         private System.Windows.Forms.Button ButtonAddDiceType;
         private System.Windows.Forms.Button ButtonResult;
     }

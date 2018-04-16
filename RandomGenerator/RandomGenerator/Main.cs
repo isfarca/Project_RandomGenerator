@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace RandomGenerator
 {
@@ -16,10 +17,13 @@ namespace RandomGenerator
         public FormMain()
         {
             InitializeComponent();
+
+            Debug.WriteLine("Test");
         }
 
         private void ButtonResult_Click(object sender, EventArgs e)
         {
+            Debug.WriteLine("button clicked");
             //for the number of different diceTypes
             //HIER WIRD NOCH DIE VARIABLE VON FETHI BENOETIGT (statt 1)
             int diceTypeCounter = 1;
@@ -32,8 +36,9 @@ namespace RandomGenerator
             Random random = new Random();
 
             //iterate through the types
-            for (int i = 0; i > diceTypeCounter; i++)
+            for (int i = 0; i < diceTypeCounter; i++)
             {
+                Debug.WriteLine("outer loop");
                 //find instances of the boxes and save them as variables
                 if (this.Controls.ContainsKey("ComboBoxDiceSides" + i.ToString()))
                 {
@@ -49,9 +54,11 @@ namespace RandomGenerator
                 }
 
                 //fill result box with random values, depending on diceType and diceAmount
-                for (int j = 1; j < Convert.ToInt32(diceAmountBox.Text); j++)
-                {
-                    resultBox.Items[0] = random.Next(1, (Convert.ToInt32(diceTypeBox.Text) + 1));
+                for (int j = 0; j < Convert.ToInt32(diceAmountBox.Text); j++)
+                    {
+                    Debug.WriteLine("inner loop");
+                    resultBox.Items.Add(random.Next(1, (Convert.ToInt32(ComboBoxDiceSides0.Text) + 1)));
+                    Debug.WriteLine(ComboBoxDiceSides0.Text);
                 }
             }
  
