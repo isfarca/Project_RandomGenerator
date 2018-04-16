@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace RandomGenerator
 {
@@ -18,6 +18,7 @@ namespace RandomGenerator
         private int multiplicatorLocationY = 4;
         private int offset = 3;
         private int diceTypes = 1;
+        private int optionsAmount = 0; // for decision helper
         private ComboBox comboBox;
         private TextBox textBox;
         private ListBox listBox;
@@ -43,6 +44,7 @@ namespace RandomGenerator
             comboBox = new ComboBox
             {
                 Name = "ComboBoxDiceSides" + Convert.ToString(addDiceTypeCount),
+                BackColor = ComboBoxDiceSides.BackColor,
                 Font = new Font(ComboBoxDiceSides.Font.Name, ComboBoxDiceSides.Font.Size),
                 Text = ComboBoxDiceSides.Text,
                 Size = ComboBoxDiceSides.Size,
@@ -52,7 +54,11 @@ namespace RandomGenerator
             textBox = new TextBox
             {
                 Name = "TextboxDiceAmount" + Convert.ToString(addDiceTypeCount),
-                Font = new Font(TextboxDiceAmount.Font.Name, TextboxDiceAmount.Font.Size),
+                BackColor = TextboxDiceAmount.BackColor,
+                BorderStyle = TextboxDiceAmount.BorderStyle,
+                Font = new Font(TextboxDiceAmount.Font.Name, 16F),
+                TextAlign = TextboxDiceAmount.TextAlign,
+                Anchor = TextboxDiceAmount.Anchor,
                 Size = TextboxDiceAmount.Size,
                 Location = new Point(TextboxDiceAmount.Location.X, TextboxDiceAmount.Location.Y * multiplicatorLocationY)
             };
@@ -60,8 +66,11 @@ namespace RandomGenerator
             listBox = new ListBox
             {
                 Name = "ListboxResultOutput" + Convert.ToString(addDiceTypeCount),
+                BackColor = ListboxResultOutput.BackColor,
+                ForeColor = ListboxResultOutput.ForeColor,
+                BorderStyle = ListboxResultOutput.BorderStyle,
                 Font = new Font(ListboxResultOutput.Font.Name, ListboxResultOutput.Font.Size),
-                Size = ListboxResultOutput.Size,
+                Size = new Size(ListboxResultOutput.Size.Width, 30),
                 Location = new Point(ListboxResultOutput.Location.X, ListboxResultOutput.Location.Y * multiplicatorLocationY)
             };
 
@@ -217,17 +226,53 @@ namespace RandomGenerator
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Random flip = new Random();
+            int coinflip = flip.Next(0, 2);
+
+            if (coinflip == 0)
+            {
+                CoinflipResultLabel.Text = "Heads";
+            }
+            else if (coinflip == 1)
+            {
+                CoinflipResultLabel.Text = "Tails";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OptionsListBox.Items.Add(EnterOptionTextbox.Text);
+            optionsAmount++;
+            EnterOptionTextbox.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OptionsListBox.Items.Clear();
+            optionsAmount = 0;
+        }
+
+        private void Decide_Click(object sender, EventArgs e)
+        {
+            if (optionsAmount > 0)
+            {
+                Random choose = new Random();
+                int choice = choose.Next(0, (optionsAmount));
+                DecisionResultLabel.Text = Convert.ToString(OptionsListBox.Items[choice]);
+            }
+            else
+            {
+                DecisionResultLabel.Text = "Enter some options first";
+            }
+        }
+
         private void ButtonNewLocations(int offset)
         {
             ButtonAddDiceType.Location = new Point(ButtonAddDiceType.Location.X, ComboBoxDiceSides.Location.Y * (multiplicatorLocationY + offset));
             ButtonRemoveDiceType.Location = new Point(ButtonRemoveDiceType.Location.X, ComboBoxDiceSides.Location.Y * (multiplicatorLocationY + offset));
             ButtonResult.Location = new Point(ButtonResult.Location.X, ComboBoxDiceSides.Location.Y * (multiplicatorLocationY + offset));
         }
-
-        /*private void CenterWindow()
-        {
-            Top = (Screen.PrimaryScreen.Bounds.Height - Height) / 2;
-            Left = (Screen.PrimaryScreen.Bounds.Width - Width) / 2;
-        }*/
     }
 }
