@@ -215,13 +215,28 @@ namespace RandomGenerator
                     resultBox = this.Controls["ListboxResultOutput" + i.ToString()] as ListBox;
                     resultBox.Items.Clear();
                 }
-
-                //fill result box with random values, depending on diceType and diceAmount
-                for (int j = 0; j < Convert.ToInt32(diceAmountBox.Text); j++)
+                if (diceAmountBox.Text != "")
                 {
-                    //Debug.WriteLine("inner loop");
-                    resultBox.Items.Add(random.Next(1, (Convert.ToInt32(diceTypeBox.Text) + 1)));
-                    Debug.WriteLine(ComboBoxDiceSides.Text);
+                    Debug.WriteLine(diceAmountBox.Text);
+                    //fill result box with random values, depending on diceType and diceAmount
+                    for (int j = 0; j < Convert.ToInt32(diceAmountBox.Text); j++)
+                    {
+                        if (diceTypeBox.Text != "Dice side")
+                        {
+                            //Debug.WriteLine("inner loop");
+                            resultBox.Items.Add(random.Next(1, (Convert.ToInt32(diceTypeBox.Text) + 1)));
+
+                        }
+                        else
+                        {
+                            resultBox.Items.Add("Please select a dice kind");
+                        }
+
+                    }
+                }
+                else
+                {
+                    resultBox.Items.Add("Please enter an amount of dices");
                 }
             }
         }
