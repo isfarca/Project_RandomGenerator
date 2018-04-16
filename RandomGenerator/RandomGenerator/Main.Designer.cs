@@ -28,15 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ComboBoxDiceSides = new System.Windows.Forms.ComboBox();
             this.TextboxDiceAmount = new System.Windows.Forms.TextBox();
             this.ListboxResultOutput = new System.Windows.Forms.ListBox();
             this.ButtonAddDiceType = new System.Windows.Forms.Button();
             this.ButtonResult = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Decide = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.OptionsListBox = new System.Windows.Forms.ListBox();
+            this.DecisionResultLabel = new System.Windows.Forms.Label();
+            this.CoinflipResultLabel = new System.Windows.Forms.Label();
+            this.EnterOptionTextbox = new System.Windows.Forms.TextBox();
+            this.ButtonRemoveDiceType = new System.Windows.Forms.Button();
+            this.Output = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ComboBoxDiceSides
             // 
+            this.ComboBoxDiceSides.BackColor = System.Drawing.Color.PeachPuff;
+            this.ComboBoxDiceSides.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ComboBoxDiceSides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxDiceSides.FormattingEnabled = true;
             this.ComboBoxDiceSides.Items.AddRange(new object[] {
@@ -48,57 +62,240 @@
             this.ComboBoxDiceSides.Name = "ComboBoxDiceSides";
             this.ComboBoxDiceSides.Size = new System.Drawing.Size(121, 28);
             this.ComboBoxDiceSides.TabIndex = 0;
-            this.ComboBoxDiceSides.Text = "Dice Side";
+            this.ComboBoxDiceSides.Text = "Dice side";
             // 
             // TextboxDiceAmount
             // 
-            this.TextboxDiceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextboxDiceAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextboxDiceAmount.BackColor = System.Drawing.Color.PeachPuff;
+            this.TextboxDiceAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextboxDiceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxDiceAmount.Location = new System.Drawing.Point(139, 12);
             this.TextboxDiceAmount.Name = "TextboxDiceAmount";
-            this.TextboxDiceAmount.Size = new System.Drawing.Size(117, 26);
+            this.TextboxDiceAmount.Size = new System.Drawing.Size(117, 25);
             this.TextboxDiceAmount.TabIndex = 1;
+            this.TextboxDiceAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ListboxResultOutput
             // 
-            this.ListboxResultOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListboxResultOutput.BackColor = System.Drawing.Color.Maroon;
+            this.ListboxResultOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListboxResultOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListboxResultOutput.ForeColor = System.Drawing.Color.Gold;
             this.ListboxResultOutput.FormattingEnabled = true;
             this.ListboxResultOutput.HorizontalScrollbar = true;
-            this.ListboxResultOutput.ItemHeight = 20;
+            this.ListboxResultOutput.ItemHeight = 25;
             this.ListboxResultOutput.Location = new System.Drawing.Point(262, 12);
             this.ListboxResultOutput.Name = "ListboxResultOutput";
-            this.ListboxResultOutput.Size = new System.Drawing.Size(416, 24);
+            this.ListboxResultOutput.Size = new System.Drawing.Size(416, 25);
             this.ListboxResultOutput.TabIndex = 2;
             // 
             // ButtonAddDiceType
             // 
-            this.ButtonAddDiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAddDiceType.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ButtonAddDiceType.FlatAppearance.BorderSize = 0;
+            this.ButtonAddDiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAddDiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAddDiceType.ForeColor = System.Drawing.Color.PeachPuff;
+            this.ButtonAddDiceType.Image = global::RandomGenerator.Properties.Resources._8357a3f1824f652;
             this.ButtonAddDiceType.Location = new System.Drawing.Point(13, 47);
             this.ButtonAddDiceType.Name = "ButtonAddDiceType";
             this.ButtonAddDiceType.Size = new System.Drawing.Size(120, 27);
             this.ButtonAddDiceType.TabIndex = 3;
             this.ButtonAddDiceType.Text = "Add dice type";
-            this.ButtonAddDiceType.UseVisualStyleBackColor = true;
+            this.ButtonAddDiceType.UseVisualStyleBackColor = false;
+            this.ButtonAddDiceType.Click += new System.EventHandler(this.ButtonAddDiceType_Click);
             // 
             // ButtonResult
             // 
+            this.ButtonResult.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonResult.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ButtonResult.FlatAppearance.BorderSize = 0;
+            this.ButtonResult.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.ButtonResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonResult.Location = new System.Drawing.Point(140, 47);
+            this.ButtonResult.ForeColor = System.Drawing.Color.PeachPuff;
+            this.ButtonResult.Image = global::RandomGenerator.Properties.Resources._8357a3f1824f652;
+            this.ButtonResult.Location = new System.Drawing.Point(562, 47);
             this.ButtonResult.Name = "ButtonResult";
             this.ButtonResult.Size = new System.Drawing.Size(116, 27);
             this.ButtonResult.TabIndex = 4;
             this.ButtonResult.Text = "Result";
-            this.ButtonResult.UseVisualStyleBackColor = true;
+            this.ButtonResult.UseVisualStyleBackColor = false;
+            this.ButtonResult.Click += new System.EventHandler(this.ButtonResult_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(133, 364);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 31);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Decision helper";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.PeachPuff;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(21, 462);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 29);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Add option";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Decide
+            // 
+            this.Decide.FlatAppearance.BorderSize = 0;
+            this.Decide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Decide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Decide.ForeColor = System.Drawing.Color.PeachPuff;
+            this.Decide.Image = ((System.Drawing.Image)(resources.GetObject("Decide.Image")));
+            this.Decide.Location = new System.Drawing.Point(318, 415);
+            this.Decide.Name = "Decide";
+            this.Decide.Size = new System.Drawing.Size(103, 29);
+            this.Decide.TabIndex = 8;
+            this.Decide.Text = "Decide";
+            this.Decide.UseVisualStyleBackColor = true;
+            this.Decide.Click += new System.EventHandler(this.Decide_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.PeachPuff;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(160, 462);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(113, 28);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Clear options";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.PeachPuff;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(318, 461);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 28);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Simple coinflip";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // OptionsListBox
+            // 
+            this.OptionsListBox.BackColor = System.Drawing.Color.Maroon;
+            this.OptionsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OptionsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OptionsListBox.ForeColor = System.Drawing.Color.Gold;
+            this.OptionsListBox.FormattingEnabled = true;
+            this.OptionsListBox.ItemHeight = 16;
+            this.OptionsListBox.Location = new System.Drawing.Point(160, 415);
+            this.OptionsListBox.Name = "OptionsListBox";
+            this.OptionsListBox.Size = new System.Drawing.Size(120, 32);
+            this.OptionsListBox.TabIndex = 11;
+            this.OptionsListBox.UseWaitCursor = true;
+            // 
+            // DecisionResultLabel
+            // 
+            this.DecisionResultLabel.AutoSize = true;
+            this.DecisionResultLabel.BackColor = System.Drawing.Color.Transparent;
+            this.DecisionResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DecisionResultLabel.Location = new System.Drawing.Point(454, 415);
+            this.DecisionResultLabel.Name = "DecisionResultLabel";
+            this.DecisionResultLabel.Size = new System.Drawing.Size(24, 26);
+            this.DecisionResultLabel.TabIndex = 12;
+            this.DecisionResultLabel.Text = "0";
+            // 
+            // CoinflipResultLabel
+            // 
+            this.CoinflipResultLabel.AutoSize = true;
+            this.CoinflipResultLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CoinflipResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoinflipResultLabel.Location = new System.Drawing.Point(454, 458);
+            this.CoinflipResultLabel.Name = "CoinflipResultLabel";
+            this.CoinflipResultLabel.Size = new System.Drawing.Size(24, 26);
+            this.CoinflipResultLabel.TabIndex = 13;
+            this.CoinflipResultLabel.Text = "0";
+            // 
+            // EnterOptionTextbox
+            // 
+            this.EnterOptionTextbox.BackColor = System.Drawing.Color.PeachPuff;
+            this.EnterOptionTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EnterOptionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnterOptionTextbox.Location = new System.Drawing.Point(21, 414);
+            this.EnterOptionTextbox.Name = "EnterOptionTextbox";
+            this.EnterOptionTextbox.Size = new System.Drawing.Size(100, 24);
+            this.EnterOptionTextbox.TabIndex = 14;
+            // 
+            // ButtonRemoveDiceType
+            // 
+            this.ButtonRemoveDiceType.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ButtonRemoveDiceType.FlatAppearance.BorderSize = 0;
+            this.ButtonRemoveDiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonRemoveDiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonRemoveDiceType.ForeColor = System.Drawing.Color.PeachPuff;
+            this.ButtonRemoveDiceType.Image = global::RandomGenerator.Properties.Resources._8357a3f1824f652;
+            this.ButtonRemoveDiceType.Location = new System.Drawing.Point(139, 47);
+            this.ButtonRemoveDiceType.Name = "ButtonRemoveDiceType";
+            this.ButtonRemoveDiceType.Size = new System.Drawing.Size(120, 27);
+            this.ButtonRemoveDiceType.TabIndex = 15;
+            this.ButtonRemoveDiceType.Text = "Remove dice type";
+            this.ButtonRemoveDiceType.UseVisualStyleBackColor = false;
+            this.ButtonRemoveDiceType.Click += new System.EventHandler(this.ButtonRemoveDiceType_Click);
+            // 
+            // Output
+            // 
+            this.Output.AutoSize = true;
+            this.Output.BackColor = System.Drawing.Color.Transparent;
+            this.Output.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Output.Location = new System.Drawing.Point(363, 364);
+            this.Output.Name = "Output";
+            this.Output.Size = new System.Drawing.Size(90, 31);
+            this.Output.TabIndex = 5;
+            this.Output.Text = "output";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RandomGenerator.Properties.Resources.mystic_background_by_lirdrak_d712xh4;
             this.ClientSize = new System.Drawing.Size(690, 501);
+            this.Controls.Add(this.ButtonRemoveDiceType);
+            this.Controls.Add(this.EnterOptionTextbox);
+            this.Controls.Add(this.CoinflipResultLabel);
+            this.Controls.Add(this.DecisionResultLabel);
+            this.Controls.Add(this.OptionsListBox);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Decide);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Output);
             this.Controls.Add(this.ButtonResult);
             this.Controls.Add(this.ButtonAddDiceType);
             this.Controls.Add(this.ListboxResultOutput);
             this.Controls.Add(this.TextboxDiceAmount);
             this.Controls.Add(this.ComboBoxDiceSides);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.Text = "Random Generator";
             this.ResumeLayout(false);
@@ -113,6 +310,17 @@
         private System.Windows.Forms.ListBox ListboxResultOutput;
         private System.Windows.Forms.Button ButtonAddDiceType;
         private System.Windows.Forms.Button ButtonResult;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Decide;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox OptionsListBox;
+        private System.Windows.Forms.Label DecisionResultLabel;
+        private System.Windows.Forms.Label CoinflipResultLabel;
+        private System.Windows.Forms.TextBox EnterOptionTextbox;
+        private System.Windows.Forms.Button ButtonRemoveDiceType;
+        private System.Windows.Forms.Label Output;
     }
 }
 
