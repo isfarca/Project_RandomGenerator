@@ -17,3 +17,4 @@ d:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGener
 d:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.csproj.CoreCompileInputs.cache
 d:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.exe
 d:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.pdb
+d:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.csprojResolveAssemblyReference.cache

@@ -21,6 +21,9 @@ namespace RandomGenerator
             //Debug.WriteLine("Test");
         }
 
+        //for decision helper
+        int optionsAmount = 0;
+
         private void ButtonResult_Click(object sender, EventArgs e)
         {
             //Debug.WriteLine("button clicked");
@@ -63,6 +66,48 @@ namespace RandomGenerator
                 }
             }
  
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Random flip = new Random();
+            int coinflip = flip.Next(0, 2);
+
+            if (coinflip == 0)
+            {
+                CoinflipResultLabel.Text = "Heads";
+            }
+            else if (coinflip == 1)
+            {
+                CoinflipResultLabel.Text = "Tails";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OptionsListBox.Items.Add(EnterOptionTextbox.Text);
+            optionsAmount++;
+            EnterOptionTextbox.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OptionsListBox.Items.Clear();
+            optionsAmount = 0;
+        }
+
+        private void Decide_Click(object sender, EventArgs e)
+        {
+            if (optionsAmount > 0)
+            {
+                Random choose = new Random();
+                int choice = choose.Next(0, (optionsAmount));
+                DecisionResultLabel.Text = Convert.ToString(OptionsListBox.Items[choice]);
+            }
+            else
+            {
+                DecisionResultLabel.Text = "Enter some options first";
+            }
         }
     }
 }
