@@ -17,6 +17,7 @@ namespace RandomGenerator
         private int addDiceTypeCount = 1;
         private int multiplicatorLocationY = 4;
         private int offset = 3;
+        private int diceTypes = 1;
         private ComboBox comboBox;
         private TextBox textBox;
         private ListBox listBox;
@@ -29,6 +30,9 @@ namespace RandomGenerator
             ComboBoxDiceSides.Name += 0;
             TextboxDiceAmount.Name += 0;
             ListboxResultOutput.Name += 0;
+
+            // Disable remove button.
+            ButtonRemoveDiceType.Enabled = false;
         }
 
         private void ButtonAddDiceType_Click(object sender, EventArgs e)
@@ -38,7 +42,7 @@ namespace RandomGenerator
             // Set the Settings for new widgets.
             comboBox = new ComboBox
             {
-                Name = ComboBoxDiceSides.Name + Convert.ToString(addDiceTypeCount),
+                Name = "ComboBoxDiceSides" + Convert.ToString(addDiceTypeCount),
                 Font = new Font(ComboBoxDiceSides.Font.Name, ComboBoxDiceSides.Font.Size),
                 Text = ComboBoxDiceSides.Text,
                 Size = ComboBoxDiceSides.Size,
@@ -47,7 +51,7 @@ namespace RandomGenerator
 
             textBox = new TextBox
             {
-                Name = TextboxDiceAmount.Name + Convert.ToString(addDiceTypeCount),
+                Name = "TextboxDiceAmount" + Convert.ToString(addDiceTypeCount),
                 Font = new Font(TextboxDiceAmount.Font.Name, TextboxDiceAmount.Font.Size),
                 Size = TextboxDiceAmount.Size,
                 Location = new Point(TextboxDiceAmount.Location.X, TextboxDiceAmount.Location.Y * multiplicatorLocationY)
@@ -55,7 +59,7 @@ namespace RandomGenerator
 
             listBox = new ListBox
             {
-                Name = ListboxResultOutput.Name + Convert.ToString(addDiceTypeCount),
+                Name = "ListboxResultOutput" + Convert.ToString(addDiceTypeCount),
                 Font = new Font(ListboxResultOutput.Font.Name, ListboxResultOutput.Font.Size),
                 Size = ListboxResultOutput.Size,
                 Location = new Point(ListboxResultOutput.Location.X, ListboxResultOutput.Location.Y * multiplicatorLocationY)
@@ -74,40 +78,143 @@ namespace RandomGenerator
             addDiceTypeCount++;
             multiplicatorLocationY += offset;
 
-            CenterWindow();
+            // By one dice type, disable remove button. By four dice type, disable add button. Otherwise enable all buttons.
+            diceTypes++;
+
+            if (diceTypes == 1)
+                ButtonRemoveDiceType.Enabled = false;
+            else if (diceTypes == 5)
+                ButtonAddDiceType.Enabled = false;
+            else
+            {
+                ButtonRemoveDiceType.Enabled = true;
+                ButtonAddDiceType.Enabled = true;
+            }
         }
 
         private void ButtonRemoveDiceType_Click(object sender, EventArgs e)
         {
-            // Reset count of widgets in the current window.
-            int comboboxes = 0;
-            int textboxes = 0;
-            int listboxes = 0;
+            // Declare variables
+            int allComboboxes = 0;
+            int allTextboxes = 0;
+            int allListboxes = 0;
+            int currentCombobox = 0;
+            int currentTextbox = 0;
+            int currentListbox = 0;
 
-            foreach (var item in Controls)
+            // Count all widgets from the current window.
+            foreach (Control item in Controls)
             {
                 if (item.GetType() == typeof(ComboBox))
-                    comboboxes++;
+                    allComboboxes++;
                 else if (item.GetType() == typeof(TextBox))
-                    textboxes++;
+                    allTextboxes++;
                 else if (item.GetType() == typeof(ListBox))
-                    listboxes++;
+                    allListboxes++;
             }
 
-            comboBox.Name = ComboBoxDiceSides.Name + (comboboxes - 1);
-            textBox.Name = TextboxDiceAmount.Name + (textboxes - 1);
-            listBox.Name = ListboxResultOutput.Name + (listboxes - 1);
+            // Remove Last ComboBox and ListBox.
+            foreach (Control item in Controls)
+            {
+                if (item.GetType() == typeof(ComboBox))
+                {
+                    currentCombobox++;
 
-            Controls.Remove(comboBox);
-            Controls.Remove(textBox);
-            Controls.Remove(listBox);
+                    if (currentCombobox == allComboboxes)
+                    {
+                        Controls.Remove(item);
 
+                        item.Dispose();
+                    }
+                }
+                else if (item.GetType() == typeof(ListBox))
+                {
+                    currentListbox++;
+
+                    if (currentListbox == allListboxes)
+                    {
+                        Controls.Remove(item);
+
+                        item.Dispose();
+                    }
+                }
+            }
+
+            // Remove Last TextBox.
+            foreach (Control item in Controls)
+            {
+                if (item.GetType() == typeof(TextBox))
+                {
+                    currentTextbox++;
+
+                    if (currentTextbox == allTextboxes)
+                    {
+                        Controls.Remove(item);
+
+                        item.Dispose();
+                    }
+                }
+            }
+
+            // Decrement amount of dice types.
             addDiceTypeCount--;
             multiplicatorLocationY -= offset;
 
-            ButtonNewLocations(0);
+            // By one dice type, disable remove button, otherwise enable all buttons.
+            diceTypes--;
 
-            CenterWindow();
+            if (diceTypes == 1)
+                ButtonRemoveDiceType.Enabled = false;
+            else
+            {
+                ButtonRemoveDiceType.Enabled = true;
+                ButtonAddDiceType.Enabled = true;
+            }
+
+            ButtonNewLocations(0);
+        }
+
+        private void ButtonResult_Click(object sender, EventArgs e)
+        {
+            //Debug.WriteLine("button clicked");
+            //for the number of different diceTypes
+            //HIER WIRD NOCH DIE VARIABLE VON FETHI BENOETIGT (statt 1)
+            int diceTypeCounter = addDiceTypeCount;
+            //for the number of dices of one specific type
+            TextBox diceAmountBox = new TextBox();
+            //for the type of the dice
+            ComboBox diceTypeBox = new ComboBox();
+            //for the output
+            ListBox resultBox = new ListBox();
+            Random random = new Random();
+
+            //iterate through the types
+            for (int i = 0; i < diceTypeCounter; i++)
+            {
+                //Debug.WriteLine("outer loop");
+                //find instances of the boxes and save them as variables
+                if (this.Controls.ContainsKey("ComboBoxDiceSides" + i.ToString()))
+                {
+                    diceTypeBox = this.Controls["ComboBoxDiceSides" + i.ToString()] as ComboBox;
+                }
+                if (this.Controls.ContainsKey("TextBoxDiceAmount" + i.ToString()))
+                {
+                    diceAmountBox = this.Controls["TextBoxDiceAmount" + i.ToString()] as TextBox;
+                }
+                if (this.Controls.ContainsKey("ListboxResultOutput" + i.ToString()))
+                {
+                    resultBox = this.Controls["ListboxResultOutput" + i.ToString()] as ListBox;
+                    resultBox.Items.Clear();
+                }
+
+                //fill result box with random values, depending on diceType and diceAmount
+                for (int j = 0; j < Convert.ToInt32(diceAmountBox.Text); j++)
+                {
+                    //Debug.WriteLine("inner loop");
+                    resultBox.Items.Add(random.Next(1, (Convert.ToInt32(diceTypeBox.Text) + 1)));
+                    Debug.WriteLine(ComboBoxDiceSides.Text);
+                }
+            }
         }
 
         private void ButtonNewLocations(int offset)
@@ -117,10 +224,10 @@ namespace RandomGenerator
             ButtonResult.Location = new Point(ButtonResult.Location.X, ComboBoxDiceSides.Location.Y * (multiplicatorLocationY + offset));
         }
 
-        private void CenterWindow()
+        /*private void CenterWindow()
         {
             Top = (Screen.PrimaryScreen.Bounds.Height - Height) / 2;
             Left = (Screen.PrimaryScreen.Bounds.Width - Width) / 2;
-        }
+        }*/
     }
 }

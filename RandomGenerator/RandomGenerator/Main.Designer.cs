@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ComboBoxDiceSides = new System.Windows.Forms.ComboBox();
             this.TextboxDiceAmount = new System.Windows.Forms.TextBox();
             this.ListboxResultOutput = new System.Windows.Forms.ListBox();
@@ -38,6 +39,8 @@
             // 
             // ComboBoxDiceSides
             // 
+            this.ComboBoxDiceSides.BackColor = System.Drawing.Color.PeachPuff;
+            this.ComboBoxDiceSides.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ComboBoxDiceSides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxDiceSides.FormattingEnabled = true;
             this.ComboBoxDiceSides.Items.AddRange(new object[] {
@@ -51,7 +54,7 @@
             this.ComboBoxDiceSides.Name = "ComboBoxDiceSides";
             this.ComboBoxDiceSides.Size = new System.Drawing.Size(143, 28);
             this.ComboBoxDiceSides.TabIndex = 0;
-            this.ComboBoxDiceSides.Text = "Dice Side";
+            this.ComboBoxDiceSides.Text = "Dice side";
             // 
             // TextboxDiceAmount
             // 
@@ -92,6 +95,7 @@
             this.ButtonResult.TabIndex = 4;
             this.ButtonResult.Text = "Result";
             this.ButtonResult.UseVisualStyleBackColor = true;
+            this.ButtonResult.Click += new System.EventHandler(this.ButtonResult_Click);
             // 
             // ButtonRemoveDiceType
             // 
@@ -109,7 +113,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(690, 501);
             this.Controls.Add(this.ButtonRemoveDiceType);
             this.Controls.Add(this.ButtonResult);
@@ -117,6 +120,9 @@
             this.Controls.Add(this.ListboxResultOutput);
             this.Controls.Add(this.TextboxDiceAmount);
             this.Controls.Add(this.ComboBoxDiceSides);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Random Generator";
