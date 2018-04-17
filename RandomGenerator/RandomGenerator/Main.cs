@@ -241,10 +241,13 @@ namespace RandomGenerator
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void  button2_Click(object sender, EventArgs e)
         {
             Random flip = new Random();
             int coinflip = flip.Next(0, 2);
+
+            CoinflipResultLabel.Text = "Flipping...";
+            await PutTaskDelay();
 
             if (coinflip == 0)
             {
@@ -254,6 +257,11 @@ namespace RandomGenerator
             {
                 CoinflipResultLabel.Text = "Tails";
             }
+        }
+
+        async Task PutTaskDelay()
+        {
+            await Task.Delay(1000);
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -30,7 +30,6 @@ d:\Users\BM\Documents\Project_RandomGenerator\RandomGenerator\RandomGenerator\ob
 D:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\bin\Debug\RandomGenerator.exe.config
 D:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\bin\Debug\RandomGenerator.exe
 D:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\bin\Debug\RandomGenerator.pdb
-D:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.csprojResolveAssemblyReference.cache
 D:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.FormMain.resources
 D:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.Properties.Resources.resources
 D:\Users\BM\Documents\GitHub\Project_RandomGenerator\RandomGenerator\RandomGenerator\obj\Debug\RandomGenerator.csproj.GenerateResource.Cache
