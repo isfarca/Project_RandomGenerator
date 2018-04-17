@@ -1,2 +1,7 @@
-language: csharp
-solution: RandomGenerator/RandomGenerator.sln
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true
