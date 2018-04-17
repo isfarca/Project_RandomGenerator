@@ -5,5 +5,3 @@ deploy:
   api_key: "0b504a609b6ce615fe5f4f301cd421794b1d1551"
   file: "RandomGenerator/RandomGenerator/bin/Debug/RandomGenerator.exe"
   skip_cleanup: true
-  on:
-    tags: true
