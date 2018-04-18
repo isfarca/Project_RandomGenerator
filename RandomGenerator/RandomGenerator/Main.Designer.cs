@@ -57,7 +57,6 @@
             this.ComboBoxDiceSides.BackColor = System.Drawing.Color.PeachPuff;
             this.ComboBoxDiceSides.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ComboBoxDiceSides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxDiceSides.FormattingEnabled = true;
             this.ComboBoxDiceSides.Items.AddRange(new object[] {
             "4",
             "6",
@@ -79,6 +78,7 @@
             this.TextboxDiceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextboxDiceAmount.Location = new System.Drawing.Point(139, 58);
             this.TextboxDiceAmount.Name = "TextboxDiceAmount";
+            this.TextboxDiceAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TextboxDiceAmount.Size = new System.Drawing.Size(117, 25);
             this.TextboxDiceAmount.TabIndex = 1;
             this.TextboxDiceAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -95,7 +95,7 @@
             this.ListboxResultOutput.Location = new System.Drawing.Point(262, 58);
             this.ListboxResultOutput.Name = "ListboxResultOutput";
             this.ListboxResultOutput.Size = new System.Drawing.Size(416, 25);
-            this.ListboxResultOutput.TabIndex = 2;
+            this.ListboxResultOutput.TabIndex = 20;
             // 
             // ButtonAddDiceType
             // 
@@ -108,8 +108,10 @@
             this.ButtonAddDiceType.Location = new System.Drawing.Point(13, 93);
             this.ButtonAddDiceType.Name = "ButtonAddDiceType";
             this.ButtonAddDiceType.Size = new System.Drawing.Size(120, 27);
-            this.ButtonAddDiceType.TabIndex = 3;
+            this.ButtonAddDiceType.TabIndex = 15;
+            this.ButtonAddDiceType.TabStop = false;
             this.ButtonAddDiceType.Text = "Add dice type";
+            this.ButtonAddDiceType.UseMnemonic = false;
             this.ButtonAddDiceType.UseVisualStyleBackColor = false;
             this.ButtonAddDiceType.Click += new System.EventHandler(this.ButtonAddDiceType_Click);
             // 
@@ -126,8 +128,10 @@
             this.ButtonResult.Location = new System.Drawing.Point(562, 93);
             this.ButtonResult.Name = "ButtonResult";
             this.ButtonResult.Size = new System.Drawing.Size(116, 27);
-            this.ButtonResult.TabIndex = 4;
+            this.ButtonResult.TabIndex = 2;
+            this.ButtonResult.TabStop = false;
             this.ButtonResult.Text = "Result";
+            this.ButtonResult.UseMnemonic = false;
             this.ButtonResult.UseVisualStyleBackColor = false;
             this.ButtonResult.Click += new System.EventHandler(this.ButtonResult_Click);
             // 
@@ -140,7 +144,7 @@
             this.label1.Location = new System.Drawing.Point(133, 316);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 31);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 14;
             this.label1.Text = "Decision helper";
             // 
             // button1
@@ -153,7 +157,7 @@
             this.button1.Location = new System.Drawing.Point(21, 462);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 29);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Add option";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -168,7 +172,7 @@
             this.Decide.Location = new System.Drawing.Point(318, 415);
             this.Decide.Name = "Decide";
             this.Decide.Size = new System.Drawing.Size(103, 29);
-            this.Decide.TabIndex = 8;
+            this.Decide.TabIndex = 5;
             this.Decide.Text = "Decide";
             this.Decide.UseVisualStyleBackColor = true;
             this.Decide.Click += new System.EventHandler(this.Decide_Click);
@@ -183,7 +187,7 @@
             this.button3.Location = new System.Drawing.Point(160, 462);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 28);
-            this.button3.TabIndex = 9;
+            this.button3.TabIndex = 6;
             this.button3.Text = "Clear options";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -198,7 +202,7 @@
             this.button2.Location = new System.Drawing.Point(318, 461);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 28);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 7;
             this.button2.Text = "Simple coinflip";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -207,6 +211,7 @@
             // 
             this.OptionsListBox.BackColor = System.Drawing.Color.Maroon;
             this.OptionsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OptionsListBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.OptionsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OptionsListBox.ForeColor = System.Drawing.Color.Gold;
             this.OptionsListBox.FormattingEnabled = true;
@@ -214,18 +219,19 @@
             this.OptionsListBox.Location = new System.Drawing.Point(160, 415);
             this.OptionsListBox.Name = "OptionsListBox";
             this.OptionsListBox.Size = new System.Drawing.Size(113, 32);
-            this.OptionsListBox.TabIndex = 11;
-            this.OptionsListBox.UseWaitCursor = true;
+            this.OptionsListBox.TabIndex = 8;
+            this.OptionsListBox.TabStop = false;
+            this.OptionsListBox.UseTabStops = false;
             // 
             // DecisionResultLabel
             // 
             this.DecisionResultLabel.AutoSize = true;
             this.DecisionResultLabel.BackColor = System.Drawing.Color.Transparent;
             this.DecisionResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DecisionResultLabel.Location = new System.Drawing.Point(454, 415);
+            this.DecisionResultLabel.Location = new System.Drawing.Point(437, 418);
             this.DecisionResultLabel.Name = "DecisionResultLabel";
             this.DecisionResultLabel.Size = new System.Drawing.Size(24, 26);
-            this.DecisionResultLabel.TabIndex = 12;
+            this.DecisionResultLabel.TabIndex = 9;
             this.DecisionResultLabel.Text = "0";
             // 
             // CoinflipResultLabel
@@ -233,10 +239,10 @@
             this.CoinflipResultLabel.AutoSize = true;
             this.CoinflipResultLabel.BackColor = System.Drawing.Color.Transparent;
             this.CoinflipResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoinflipResultLabel.Location = new System.Drawing.Point(454, 458);
+            this.CoinflipResultLabel.Location = new System.Drawing.Point(437, 458);
             this.CoinflipResultLabel.Name = "CoinflipResultLabel";
             this.CoinflipResultLabel.Size = new System.Drawing.Size(24, 26);
-            this.CoinflipResultLabel.TabIndex = 13;
+            this.CoinflipResultLabel.TabIndex = 10;
             this.CoinflipResultLabel.Text = "0";
             // 
             // EnterOptionTextbox
@@ -247,11 +253,12 @@
             this.EnterOptionTextbox.Location = new System.Drawing.Point(19, 414);
             this.EnterOptionTextbox.Name = "EnterOptionTextbox";
             this.EnterOptionTextbox.Size = new System.Drawing.Size(114, 24);
-            this.EnterOptionTextbox.TabIndex = 14;
+            this.EnterOptionTextbox.TabIndex = 3;
             // 
             // ButtonRemoveDiceType
             // 
             this.ButtonRemoveDiceType.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ButtonRemoveDiceType.Enabled = false;
             this.ButtonRemoveDiceType.FlatAppearance.BorderSize = 0;
             this.ButtonRemoveDiceType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonRemoveDiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,8 +267,10 @@
             this.ButtonRemoveDiceType.Location = new System.Drawing.Point(139, 93);
             this.ButtonRemoveDiceType.Name = "ButtonRemoveDiceType";
             this.ButtonRemoveDiceType.Size = new System.Drawing.Size(120, 27);
-            this.ButtonRemoveDiceType.TabIndex = 15;
+            this.ButtonRemoveDiceType.TabIndex = 16;
+            this.ButtonRemoveDiceType.TabStop = false;
             this.ButtonRemoveDiceType.Text = "Remove dice type";
+            this.ButtonRemoveDiceType.UseMnemonic = false;
             this.ButtonRemoveDiceType.UseVisualStyleBackColor = false;
             this.ButtonRemoveDiceType.Click += new System.EventHandler(this.ButtonRemoveDiceType_Click);
             // 
@@ -273,7 +282,7 @@
             this.Output.Location = new System.Drawing.Point(401, 15);
             this.Output.Name = "Output";
             this.Output.Size = new System.Drawing.Size(77, 26);
-            this.Output.TabIndex = 5;
+            this.Output.TabIndex = 19;
             this.Output.Text = "Output";
             // 
             // label2
@@ -284,7 +293,7 @@
             this.label2.Location = new System.Drawing.Point(144, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 52);
-            this.label2.TabIndex = 16;
+            this.label2.TabIndex = 18;
             this.label2.Text = "Amount of\r\n    dices";
             // 
             // label3
@@ -306,7 +315,7 @@
             this.label4.Location = new System.Drawing.Point(8, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(140, 26);
-            this.label4.TabIndex = 18;
+            this.label4.TabIndex = 11;
             this.label4.Text = "Enter options";
             // 
             // label5
@@ -317,7 +326,7 @@
             this.label5.Location = new System.Drawing.Point(164, 370);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 26);
-            this.label5.TabIndex = 19;
+            this.label5.TabIndex = 12;
             this.label5.Text = "Option List";
             // 
             // label6
@@ -328,14 +337,14 @@
             this.label6.Location = new System.Drawing.Point(344, 370);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 26);
-            this.label6.TabIndex = 20;
+            this.label6.TabIndex = 13;
             this.label6.Text = "Go!";
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::RandomGenerator.Properties.Resources.mystic_background_by_lirdrak_d712xh4;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(690, 501);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -362,6 +371,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Random Generator";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -369,8 +379,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox ComboBoxDiceSides;
         private System.Windows.Forms.TextBox TextboxDiceAmount;
         private System.Windows.Forms.ListBox ListboxResultOutput;
         private System.Windows.Forms.Button ButtonAddDiceType;
@@ -391,6 +399,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox ComboBoxDiceSides;
     }
 }
 
