@@ -254,6 +254,7 @@
             this.EnterOptionTextbox.Name = "EnterOptionTextbox";
             this.EnterOptionTextbox.Size = new System.Drawing.Size(114, 24);
             this.EnterOptionTextbox.TabIndex = 3;
+            this.EnterOptionTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterOptionTextbox_KeyDown);
             // 
             // ButtonRemoveDiceType
             // 
@@ -372,7 +373,7 @@
             this.MinimizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Random Generator";
+            this.Text = "Random Generator for Pen & Paper";
             this.ResumeLayout(false);
             this.PerformLayout();
 
