@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -255,9 +250,14 @@ namespace RandomGenerator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OptionsListBox.Items.Add(EnterOptionTextbox.Text);
-            optionsAmount++;
-            EnterOptionTextbox.Text = "";
+            if (EnterOptionTextbox.Text != "")
+            {
+                OptionsListBox.Items.Add(EnterOptionTextbox.Text);
+                optionsAmount++;
+                EnterOptionTextbox.Text = "";
+            }
+
+            EnterOptionTextbox.Focus();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -285,6 +285,12 @@ namespace RandomGenerator
             ButtonAddDiceType.Location = new Point(ButtonAddDiceType.Location.X, ButtonAddDiceType.Location.Y + offset);
             ButtonRemoveDiceType.Location = new Point(ButtonRemoveDiceType.Location.X, ButtonRemoveDiceType.Location.Y + offset);
             ButtonResult.Location = new Point(ButtonResult.Location.X, ButtonResult.Location.Y + offset);
+        }
+
+        private void EnterOptionTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                button1_Click(sender, e);
         }
     }
 }
